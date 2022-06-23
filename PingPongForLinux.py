@@ -11,7 +11,7 @@ score1 = 0
 score2 = 0
 #Making the screen for the python game.
 screen = turtle.Screen()
-screen.title("Basic Ping Pong Game 1.0 (BETA)!")
+screen.title("Basic Ping Pong Game 1.1 (BETA)!")
 screen.bgcolor("pink")
 screen.setup(width=800, height=600)
 screen.tracer(0)
@@ -54,29 +54,29 @@ pen.color("black")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player one: 0 - Player two: 0", align="center", font=("Ubuntu", 25))
+pen.write("Player one: 0 Player two: 0", align="center", font=("Ubuntu", 25))
 
 #Controls for paddle one
 #----------------------------
 #The paddle for player one will move up
 def paddle1_up():
     y = paddle1.ycor()
-    y += 30
+    y += 60
     paddle1.sety(y)
 #The paddle will move down
 def paddle1_down():
     y = paddle1.ycor()
-    y -= 30
+    y -= 60
     paddle1.sety(y)
 #------------------------------
 #Controls for paddle two.
 def paddle2_up():
     y = paddle2.ycor()
-    y += 30
+    y += 60
     paddle2.sety(y)
 def paddle2_down():
     y = paddle2.ycor()
-    y -= 30
+    y -= 60
     paddle2.sety(y)
 
 #Keybpard binding.
@@ -109,7 +109,7 @@ while True:
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
     if ball.xcor() > 380:
-        score1 = 0
+        score1 -= 1
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
@@ -118,7 +118,7 @@ while True:
 
 
     if ball.xcor() < -380:
-        score2 = 0
+        score2 -= 1
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
