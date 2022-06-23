@@ -1,6 +1,6 @@
 # PingPongGame
 
-![Screenshot from 2022-06-22 14-06-08](https://user-images.githubusercontent.com/52569279/175037215-3d312df6-be85-44e7-abc4-ae6e3cbc0d19.png)
+![Screenshot from 2022-06-23 15-07-25](https://user-images.githubusercontent.com/52569279/175319727-497ca9d3-1950-45fe-896e-ec5a1c0a3da9.png)
 
 Free and open source.
 Install Ubuntu font.
