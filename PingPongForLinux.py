@@ -11,7 +11,7 @@ score1 = 0
 score2 = 0
 #Making the screen for the python game.
 screen = turtle.Screen()
-screen.title("Basic Ping Pong Game 1.1 (BETA)!")
+screen.title("Basic Ping Pong Game 2.0! By Jonathan Steadman!")
 screen.bgcolor("pink")
 screen.setup(width=800, height=600)
 screen.tracer(0)
@@ -42,7 +42,7 @@ paddle2.goto(350,0)
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("square")
-ball.color("red")
+ball.color("blue")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 0.1
@@ -109,7 +109,7 @@ while True:
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
     if ball.xcor() > 380:
-        score1 -= 1
+        score2 -= 1
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
@@ -118,7 +118,7 @@ while True:
 
 
     if ball.xcor() < -380:
-        score2 -= 1
+        score1 -= 1
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
