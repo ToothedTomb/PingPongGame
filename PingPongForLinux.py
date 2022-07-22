@@ -6,12 +6,14 @@
 import turtle
 import tkinter
 #Setting up the score
+#Playsound will allow me to add some sound effects. 
+from playsound import playsound
 
 score1 = 0
 score2 = 0
 #Making the screen for the python game.
 screen = turtle.Screen()
-screen.title("Basic Ping Pong Game 2.0! By Jonathan Steadman!")
+screen.title("Basic Ping Pong Game 3.0! By Jonathan Steadman!")
 screen.bgcolor("pink")
 screen.setup(width=800, height=600)
 screen.tracer(0)
@@ -107,9 +109,16 @@ while True:
     if (ball.xcor() < -340 and ball.xcor() > -350) and (paddle1.ycor() + 50 > ball.ycor() > paddle1.ycor() - 50):
         score1 += 1
         pen.clear()
+
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
+        #Why add block = false.
+        #When the sound is played the game freeze but this will stop it from freezing the game. :)
+        playsound('sounds/mixkit-light-impact-on-the-ground-2070.wav', block=False)
+
     if ball.xcor() > 380:
         score2 -= 1
+        playsound('sounds/cheer.mp3', block=False)
+
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
@@ -119,6 +128,8 @@ while True:
 
     if ball.xcor() < -380:
         score1 -= 1
+        playsound('sounds/cheer.mp3', block=False)
+
         pen.clear()
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25))
         ball.goto(0, 0)
@@ -126,7 +137,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (paddle2.ycor() + 50 > ball.ycor() > paddle2.ycor() - 50):
         score2 += 1
         pen.clear()
+
         pen.write("Player one: {} Player two: {}".format(score1, score2), align="center", font=("Ubuntu", 25, "normal"))
+        playsound('sounds/mixkit-light-impact-on-the-ground-2070.wav', block=False)
 
 
     # paddle and ball collisions
