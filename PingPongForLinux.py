@@ -13,7 +13,7 @@ score1 = 0
 score2 = 0
 #Making the screen for the python game.
 screen = turtle.Screen()
-screen.title("Basic Ping Pong Game 3.0! By Jonathan Steadman!")
+screen.title("Basic Ping Pong Game 4.0! By Jonathan Steadman!")
 screen.bgcolor("pink")
 screen.setup(width=800, height=600)
 screen.tracer(0)
@@ -116,7 +116,10 @@ while True:
         playsound('sounds/mixkit-light-impact-on-the-ground-2070.wav', block=False)
 
     if ball.xcor() > 380:
-        score2 -= 1
+        if score2  <0:
+            score2 = 0
+        elif score2 >0:
+            score2 -= 1
         playsound('sounds/cheer.mp3', block=False)
 
         pen.clear()
@@ -127,7 +130,11 @@ while True:
 
 
     if ball.xcor() < -380:
-        score1 -= 1
+        if score1 <0:
+            score1 = 0
+        elif score1 > 0:
+            score1 -= 1
+        #score1 -= 1
         playsound('sounds/cheer.mp3', block=False)
 
         pen.clear()
